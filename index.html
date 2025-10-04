@@ -15,7 +15,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #1a1a1a;
-            background: #fff;
+            background: #FFFCF7;
         }
 
         /* Hero Section */
@@ -24,48 +24,35 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
+            background: #FFFCF7;
+            color: #1a1a1a;
             text-align: center;
             padding: 2rem;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(220, 38, 38, 0.15) 0%, transparent 50%);
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
             max-width: 900px;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             line-height: 1.1;
         }
 
         .hero .tagline {
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-            color: #dc2626;
+            color: #8B1538;
             margin-bottom: 2rem;
             font-weight: 500;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            color: #4a4a4a;
         }
 
         .scroll-indicator {
@@ -73,7 +60,7 @@
             bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
-            color: rgba(255,255,255,0.5);
+            color: #8B1538;
             font-size: 0.9rem;
             animation: bounce 2s infinite;
         }
@@ -86,9 +73,14 @@
 
         /* Section Styles */
         section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
         h2 {
@@ -99,7 +91,7 @@
         }
 
         .accent {
-            color: #dc2626;
+            color: #8B1538;
         }
 
         /* Story Section */
@@ -124,7 +116,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: #dc2626;
+            background: #8B1538;
             transform: translateX(-50%);
         }
 
@@ -145,15 +137,15 @@
         .timeline-content {
             flex: 1;
             padding: 2rem;
-            background: #f9f9f9;
+            background: white;
             border-radius: 8px;
             margin: 0 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .timeline-date {
             font-weight: 700;
-            color: #dc2626;
+            color: #8B1538;
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
@@ -175,11 +167,11 @@
             transform: translateX(-50%);
             width: 20px;
             height: 20px;
-            background: #dc2626;
-            border: 4px solid white;
+            background: #8B1538;
+            border: 4px solid #FFFCF7;
             border-radius: 50%;
             z-index: 2;
-            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.2);
+            box-shadow: 0 0 0 4px rgba(139, 21, 56, 0.15);
         }
 
         /* Skills Grid */
@@ -191,16 +183,17 @@
         }
 
         .skill-card {
-            background: #f9f9f9;
+            background: white;
             padding: 2rem;
             border-radius: 8px;
-            border-left: 4px solid #dc2626;
+            border-left: 4px solid #8B1538;
             transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .skill-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
         }
 
         .skill-title {
@@ -218,23 +211,24 @@
         .metric {
             font-size: 2rem;
             font-weight: 700;
-            color: #dc2626;
+            color: #8B1538;
             margin-top: 1rem;
         }
 
         /* Case Studies */
         .case-study {
             margin-bottom: 4rem;
-            background: #f9f9f9;
+            background: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .case-study-image {
             width: 100%;
             height: 400px;
             object-fit: cover;
+            background: #f5f5f5;
         }
 
         .case-study-content {
@@ -256,14 +250,10 @@
 
         /* Why Now Section */
         .why-now {
-            background: #1a1a1a;
-            color: white;
+            background: #FFFCF7;
+            color: #1a1a1a;
             text-align: center;
             padding: 5rem 2rem;
-        }
-
-        .why-now h2 {
-            color: white;
         }
 
         .why-now-content {
@@ -271,12 +261,17 @@
             margin: 0 auto;
             font-size: 1.2rem;
             line-height: 1.8;
+            color: #4a4a4a;
         }
 
         /* Contact Section */
         .contact {
             text-align: center;
-            background: #f9f9f9;
+            background: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .contact-info {
@@ -290,7 +285,7 @@
         }
 
         .contact-item a {
-            color: #dc2626;
+            color: #8B1538;
             text-decoration: none;
             font-weight: 600;
         }
@@ -301,7 +296,7 @@
 
         .cta-button {
             display: inline-block;
-            background: #dc2626;
+            background: #8B1538;
             color: white;
             padding: 1rem 2.5rem;
             border-radius: 4px;
@@ -313,7 +308,7 @@
         }
 
         .cta-button:hover {
-            background: #b91c1c;
+            background: #6d1029;
         }
 
         .location-note {
@@ -352,8 +347,8 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Coming Back Home to ICAN</h1>
-            <p class="tagline">8 years of ICAN experience + 6 years of digital evolution</p>
-            <p>From campaigner to strategist, I'm ready to lead ICAN's digital communications into its next chapter.</p>
+            <p class="tagline">9 years of experience • Campaigner since 2013</p>
+            <p>From early campaigner to strategist, I'm ready to lead ICAN's digital communications into its next chapter.</p>
         </div>
         <div class="scroll-indicator">↓ Scroll to explore</div>
     </section>
@@ -362,17 +357,28 @@
     <section id="story">
         <h2>The <span class="accent">Journey</span></h2>
         <div class="story-intro">
-            I didn't just work at ICAN—I grew up professionally there. From assisting at Civil Society Forums to delivering speeches at UN headquarters, I've lived the mission. Now, after evolving my skills in the tech and corporate world, I'm bringing that expertise back where it belongs.
+            I started at ICAN as a campaigner in 2013. From assisting at Civil Society Forums to delivering a speech at UN headquarters in Geneva, I've lived the mission. Now, after evolving my skills in the tech and corporate world, I'm bringing that expertise back where it belongs.
         </div>
 
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">2013-2014</div>
-                    <div class="timeline-title">Early ICAN Days</div>
+                    <div class="timeline-date">2013</div>
+                    <div class="timeline-title">Started as Campaigner</div>
                     <div class="timeline-description">
-                        Assisted at Civil Society Forums in Oslo (2013) and Nayarit, Mexico (2014), supporting discussions on the Treaty on the Prohibition of Nuclear Weapons. These formative experiences shaped my understanding of international advocacy.
+                        Began my journey at ICAN, assisting at the Civil Society Forum in Oslo. This formative experience shaped my understanding of international advocacy and nuclear disarmament efforts.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2014</div>
+                    <div class="timeline-title">Nayarit Conference</div>
+                    <div class="timeline-description">
+                        Supported ICAN's work at the Civil Society Forum in Nayarit, Mexico, contributing to discussions on the Treaty on the Prohibition of Nuclear Weapons.
                     </div>
                 </div>
             </div>
@@ -383,7 +389,7 @@
                     <div class="timeline-date">2014-2021</div>
                     <div class="timeline-title">Multiple Roles at ICAN</div>
                     <div class="timeline-description">
-                        Held various positions including Campaigner, Communications Intern, Project Coordinator, Designer, and Social Media Designer. Managed yearly grants for education risk projects in Latin America, with focus on Colombia.
+                        Worked in various capacities including Communications Intern, Project Coordinator, Designer, and Social Media Consultant. Created annual reports, booklets, social media campaigns, and digital content. Managed yearly grants for education risk projects in Latin America, with focus on Colombia.
                     </div>
                 </div>
             </div>
@@ -394,7 +400,7 @@
                     <div class="timeline-date">2018</div>
                     <div class="timeline-title">UN Speech, Geneva</div>
                     <div class="timeline-description">
-                        Delivered a speech representing ICAN at UN headquarters in Geneva during global campaigners' meetings. A defining moment that demonstrated my capability to represent the organization on international stages.
+                        Delivered a speech representing ICAN at UN headquarters in Geneva during global campaigners' meetings—a defining moment demonstrating my capability to represent the organization on international stages.
                     </div>
                 </div>
             </div>
@@ -416,7 +422,7 @@
                     <div class="timeline-date">2019-2021</div>
                     <div class="timeline-title">Corporate Excellence</div>
                     <div class="timeline-description">
-                        At Accenture, managed and analyzed data for multinational clients, developing skills in process optimization, GDPR compliance, and data-driven decision making that are crucial for digital communications.
+                        At Accenture, managed and analyzed data for multinational clients, developing skills in process optimization, GDPR compliance, and data-driven decision making crucial for digital communications.
                     </div>
                 </div>
             </div>
@@ -453,7 +459,7 @@
             <div class="skill-card">
                 <div class="skill-title">Digital Strategy</div>
                 <div class="skill-description">
-                    12+ years developing digital communications strategies across advocacy, government, and tech sectors. Expert in multi-channel campaigns that drive engagement and action.
+                    9+ years developing digital communications strategies across advocacy, government, and tech sectors. Expert in multi-channel campaigns that drive engagement and action.
                 </div>
             </div>
 
@@ -489,7 +495,7 @@
             <div class="skill-card">
                 <div class="skill-title">International Experience</div>
                 <div class="skill-description">
-                    Worked across 5+ countries, delivered speeches at UN, managed Latin American programs. Fluent in Spanish, English, Portuguese. Master's in International Studies.
+                    Worked across 5+ countries, delivered speech at UN Geneva, managed Latin American programs. Fluent in Spanish, English, Portuguese. Master's in International Studies.
                 </div>
             </div>
         </div>
@@ -502,9 +508,9 @@
         <div class="case-study">
             <img src="placeholder-ican-campaign.jpg" alt="ICAN Campaigns" class="case-study-image">
             <div class="case-study-content">
-                <div class="case-study-title">ICAN Digital Campaigns (2013-2021)</div>
+                <div class="case-study-title">ICAN Digital Communications (2013-2021)</div>
                 <div class="case-study-description">
-                    Led visual design for international nuclear disarmament campaigns across multiple channels. Created engaging social media content, developed graphics for YouGov polling campaigns, and coordinated digital assets for Civil Society Forums in Oslo and Nayarit. Contributed to strategic communication that supported ICAN's advocacy efforts leading up to and following the 2017 Nobel Peace Prize.
+                    Created annual reports, booklets, and social media campaigns for ICAN's international advocacy efforts. Developed visual content and digital assets for Civil Society Forums in Oslo and Nayarit. Provided social media consultancy and coordinated digital communications that supported ICAN's mission leading up to and following the 2017 Nobel Peace Prize.
                 </div>
             </div>
         </div>
@@ -538,7 +544,7 @@
                 The world needs ICAN more than ever. With nuclear threats making headlines and geopolitical tensions rising, the moment for bold digital communications has arrived.
             </p>
             <p style="margin-bottom: 2rem;">
-                I've spent the last six years learning how tech companies scale, how corporate systems work, and how to build digital experiences that drive action. Now I'm ready to bring all of that back to the mission I care about most.
+                I've spent years learning how tech companies scale, how corporate systems work, and how to build digital experiences that drive action. Now I'm ready to bring all of that back to the mission I care about most.
             </p>
             <p>
                 I know ICAN's voice. I understand its challenges. And I have the strategic and technical skills to help it reach audiences in ways that matter—turning awareness into action, and action into change.
