@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabela Vargas | ICAN Digital Communications Coordinator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(220, 38, 38, 0.15) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: #dc2626;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .accent {
+            color: #dc2626;
+        }
+
+        /* Story Section */
+        .story-intro {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #4a4a4a;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #dc2626;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin: 0 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: #dc2626;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #dc2626;
+            border: 4px solid white;
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.2);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #dc2626;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .skill-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .skill-description {
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        .metric {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #dc2626;
+            margin-top: 1rem;
+        }
+
+        /* Case Studies */
+        .case-study {
+            margin-bottom: 4rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .case-study-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .case-study-content {
+            padding: 2rem;
+        }
+
+        .case-study-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .case-study-description {
+            color: #4a4a4a;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Why Now Section */
+        .why-now {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .why-now h2 {
+            color: white;
+        }
+
+        .why-now-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            background: #f9f9f9;
+        }
+
+        .contact-info {
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            color: #4a4a4a;
+        }
+
+        .contact-item a {
+            color: #dc2626;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 1rem;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #b91c1c;
+        }
+
+        .location-note {
+            margin-top: 2rem;
+            font-style: italic;
+            color: #4a4a4a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+            }
+
+            .timeline-marker {
+                left: 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Coming Back Home to ICAN</h1>
+            <p class="tagline">8 years of ICAN experience + 6 years of digital evolution</p>
+            <p>From campaigner to strategist, I'm ready to lead ICAN's digital communications into its next chapter.</p>
+        </div>
+        <div class="scroll-indicator">↓ Scroll to explore</div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story">
+        <h2>The <span class="accent">Journey</span></h2>
+        <div class="story-intro">
+            I didn't just work at ICAN—I grew up professionally there. From assisting at Civil Society Forums to delivering speeches at UN headquarters, I've lived the mission. Now, after evolving my skills in the tech and corporate world, I'm bringing that expertise back where it belongs.
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2013-2014</div>
+                    <div class="timeline-title">Early ICAN Days</div>
+                    <div class="timeline-description">
+                        Assisted at Civil Society Forums in Oslo (2013) and Nayarit, Mexico (2014), supporting discussions on the Treaty on the Prohibition of Nuclear Weapons. These formative experiences shaped my understanding of international advocacy.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2014-2021</div>
+                    <div class="timeline-title">Multiple Roles at ICAN</div>
+                    <div class="timeline-description">
+                        Held various positions including Campaigner, Communications Intern, Project Coordinator, Designer, and Social Media Designer. Managed yearly grants for education risk projects in Latin America, with focus on Colombia.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2018</div>
+                    <div class="timeline-title">UN Speech, Geneva</div>
+                    <div class="timeline-description">
+                        Delivered a speech representing ICAN at UN headquarters in Geneva during global campaigners' meetings. A defining moment that demonstrated my capability to represent the organization on international stages.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2017-2019</div>
+                    <div class="timeline-title">Government Sector</div>
+                    <div class="timeline-description">
+                        Worked with Colombian Justice Ministry and Cadastre Bogotá, developing digital platforms and public communications. Learned how to make complex technical information accessible to general audiences.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2019-2021</div>
+                    <div class="timeline-title">Corporate Excellence</div>
+                    <div class="timeline-description">
+                        At Accenture, managed and analyzed data for multinational clients, developing skills in process optimization, GDPR compliance, and data-driven decision making that are crucial for digital communications.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2022-2024</div>
+                    <div class="timeline-title">Tech Innovation</div>
+                    <div class="timeline-description">
+                        Led BrandHub development at FREENOW, reducing asset search time by 85% through taxonomy-driven systems. Mastered digital asset management, brand consistency, and cross-functional collaboration.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2024-2025</div>
+                    <div class="timeline-title">Growth & Leadership</div>
+                    <div class="timeline-description">
+                        Currently serving as Growth Manager at Greener Act and Studio Manager at The Reformer Lab, co-designing strategies to scale partnerships and streamline operations. Ready to return to mission-driven work.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>What I <span class="accent">Bring</span></h2>
+        
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-title">Digital Strategy</div>
+                <div class="skill-description">
+                    12+ years developing digital communications strategies across advocacy, government, and tech sectors. Expert in multi-channel campaigns that drive engagement and action.
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-title">Brand Management</div>
+                <div class="skill-description">
+                    Led BrandHub project at FREENOW that transformed how teams access and use brand assets.
+                </div>
+                <div class="metric">85% efficiency increase</div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-title">Content Creation</div>
+                <div class="skill-description">
+                    Expert in creating compelling visual and written content for general audiences across web, social media, email, and print. Skilled in Adobe Suite, Figma, Canva.
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-title">Campaign Coordination</div>
+                <div class="skill-description">
+                    Proven track record coordinating international campaigns, managing stakeholders, and delivering results under tight deadlines. Comfortable working across time zones.
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-title">Systems Thinking</div>
+                <div class="skill-description">
+                    Strong in process optimization, workflow automation, and building scalable systems. Experience with DAM platforms (Bynder, Frontify) and project management tools.
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-title">International Experience</div>
+                <div class="skill-description">
+                    Worked across 5+ countries, delivered speeches at UN, managed Latin American programs. Fluent in Spanish, English, Portuguese. Master's in International Studies.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="work">
+        <h2>Featured <span class="accent">Projects</span></h2>
+
+        <div class="case-study">
+            <img src="placeholder-ican-campaign.jpg" alt="ICAN Campaigns" class="case-study-image">
+            <div class="case-study-content">
+                <div class="case-study-title">ICAN Digital Campaigns (2013-2021)</div>
+                <div class="case-study-description">
+                    Led visual design for international nuclear disarmament campaigns across multiple channels. Created engaging social media content, developed graphics for YouGov polling campaigns, and coordinated digital assets for Civil Society Forums in Oslo and Nayarit. Contributed to strategic communication that supported ICAN's advocacy efforts leading up to and following the 2017 Nobel Peace Prize.
+                </div>
+            </div>
+        </div>
+
+        <div class="case-study">
+            <img src="placeholder-brandhub.jpg" alt="FREENOW BrandHub" class="case-study-image">
+            <div class="case-study-content">
+                <div class="case-study-title">FREENOW BrandHub (2022-2024)</div>
+                <div class="case-study-description">
+                    Designed and implemented a comprehensive Brand Hub that revolutionized how 500+ employees across Europe access brand assets. Reduced search time by 85% through taxonomy-driven organization. Managed the entire project lifecycle from vendor selection to launch, ensuring brand consistency across all marketing channels while collaborating with design, marketing, and regional teams.
+                </div>
+            </div>
+        </div>
+
+        <div class="case-study">
+            <img src="placeholder-government.jpg" alt="Government Digital Platforms" class="case-study-image">
+            <div class="case-study-content">
+                <div class="case-study-title">Public Sector Digital Communications (2017-2019)</div>
+                <div class="case-study-description">
+                    Led digital content strategy for Colombian government organizations including Cadastre Bogotá and Justice Ministry. Transformed complex technical information into accessible public-facing content through data visualizations, weekly newsletters, and digital platforms. Successfully bridged the gap between technical requirements and general audience comprehension.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Now Section -->
+    <section class="why-now">
+        <h2>Why <span class="accent">Now</span></h2>
+        <div class="why-now-content">
+            <p style="margin-bottom: 2rem;">
+                The world needs ICAN more than ever. With nuclear threats making headlines and geopolitical tensions rising, the moment for bold digital communications has arrived.
+            </p>
+            <p style="margin-bottom: 2rem;">
+                I've spent the last six years learning how tech companies scale, how corporate systems work, and how to build digital experiences that drive action. Now I'm ready to bring all of that back to the mission I care about most.
+            </p>
+            <p>
+                I know ICAN's voice. I understand its challenges. And I have the strategic and technical skills to help it reach audiences in ways that matter—turning awareness into action, and action into change.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Let's <span class="accent">Talk</span></h2>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Email:</strong> <a href="mailto:isabella.vargasj@gmail.com">isabella.vargasj@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>Phone:</strong> <a href="tel:+351966047875">+351 966 047 875</a>
+            </div>
+            <div class="contact-item">
+                <strong>Portfolio:</strong> <a href="https://isa-bela.com" target="_blank">isa-bela.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/isabelavargas" target="_blank">linkedin.com/in/isabelavargas</a>
+            </div>
+        </div>
+
+        <a href="#" class="cta-button">Download CV (Coming Soon)</a>
+
+        <div class="location-note">
+            Available for hybrid Geneva-Lisbon arrangement. Flexible to travel regularly to Geneva.
+        </div>
+    </section>
+</body>
+</html>
